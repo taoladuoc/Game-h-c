@@ -223,14 +223,14 @@ const App: React.FC = () => {
   };
   
   return (
-    <div className="bg-gray-800 text-white w-screen h-screen flex flex-col items-center justify-center font-mono overflow-hidden">
-      <div className="absolute top-4 left-4 text-2xl z-10">Điểm: {score}</div>
-       <div className="absolute top-4 right-4 text-xl z-10 text-center">
-         Tốc độ: {gameSpeed.toFixed(1)} <br/> 
-         Câu hỏi: {answeredQuestionIndices.size} / {questionBank.questions.length}
-       </div>
+    <div className="text-white w-screen h-screen flex flex-col lg:flex-row items-center justify-center font-mono overflow-hidden p-4 gap-x-8">
       
-      <div ref={gameContainerRef} className="relative w-full h-full max-w-6xl max-h-[700px] bg-sky-800 border-4 border-gray-500 overflow-hidden">
+      <div ref={gameContainerRef} className="relative w-full h-full max-w-6xl max-h-[850px] bg-sky-800 border-4 border-gray-500 overflow-hidden">
+        <div className="absolute top-4 left-4 text-2xl z-10">Điểm: {score}</div>
+        <div className="absolute top-4 right-4 text-xl z-10 text-center">
+            Tốc độ: {gameSpeed.toFixed(1)} <br/> 
+            Câu hỏi: {answeredQuestionIndices.size} / {questionBank.questions.length}
+        </div>
          <div className="absolute bottom-0 left-0 w-full bg-green-800" style={{ height: `${GROUND_HEIGHT}px` }} />
          <img src="https://dangkyhoc.com/logo.png" alt="Logo" className="absolute w-16 h-16 object-contain opacity-50" style={{ bottom: `${GROUND_HEIGHT + 5}px`, left: '10px' }} />
 
@@ -256,20 +256,6 @@ const App: React.FC = () => {
              <div className="mt-8 text-lg">
                 <p>Độ khó: <span className="font-bold text-yellow-400">{difficulty.name}</span></p>
                 <p>Bộ câu hỏi: <span className="font-bold text-yellow-400">{questionBank.name}</span></p>
-            </div>
-            <div className="mt-8 border-t border-gray-500 pt-6 w-full max-w-lg">
-                <h3 className="text-xl text-yellow-300 font-semibold mb-4">Mời tham gia nhóm Zalo</h3>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://zalo.me/g/tncmdq530" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-lg rounded-lg">
-                        🎬 Nhóm tạo Video từ SGK
-                    </a>
-                    <a href="https://zalo.me/g/uditpr888" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-lg rounded-lg">
-                        📚 Nhóm nhận học liệu
-                    </a>
-                </div>
-            </div>
-            <div className="absolute bottom-4 text-gray-400 text-sm">
-                Tác giả: Nguyễn Thành Được
             </div>
           </div>
         )}
@@ -300,6 +286,22 @@ const App: React.FC = () => {
             />
         )}
       </div>
+
+      <div className="w-full max-w-lg lg:max-w-xs mx-auto lg:mx-0 flex-shrink-0 flex flex-col items-center justify-center p-6 bg-gray-900/50 rounded-lg shadow-lg border border-gray-700 mt-4 lg:mt-0">
+        <h3 className="text-xl text-yellow-300 font-semibold mb-4 text-center">Mời tham gia nhóm Zalo</h3>
+        <div className="flex flex-col gap-4 w-full">
+            <a href="https://zalo.me/g/tncmdq530" target="_blank" rel="noopener noreferrer" className="px-4 py-3 bg-cyan-600 hover:bg-cyan-700 text-lg rounded-lg w-full text-center transition-transform hover:scale-105">
+                🎬 Nhóm tạo Video từ SGK
+            </a>
+            <a href="https://zalo.me/g/uditpr888" target="_blank" rel="noopener noreferrer" className="px-4 py-3 bg-teal-600 hover:bg-teal-700 text-lg rounded-lg w-full text-center transition-transform hover:scale-105">
+                📚 Nhóm nhận học liệu
+            </a>
+        </div>
+        <div className="mt-8 pt-4 border-t border-gray-600 text-gray-400 text-sm text-center w-full">
+            Tác giả: Nguyễn Thành Được
+        </div>
+      </div>
+
     </div>
   );
 };
