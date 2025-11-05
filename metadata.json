@@ -1,0 +1,5 @@
+{
+  "name": "React Endless Runner Quiz",
+  "description": "A 2D endless runner game where collisions trigger multiple-choice questions instead of a game over. The game ends when all 10 questions are answered.",
+  "requestFramePermissions": []
+}
